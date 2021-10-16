@@ -53,12 +53,13 @@
 .slider__photo-list {
   grid-area: photo;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .slider__photo-track {
   display: flex;
   position: relative;
-  transition: 0.5s;
+  transition: left 0.5s;
   width: 400%;
 }
 
@@ -81,6 +82,7 @@ input[id="slide4"]:checked ~ .slider__photo-list .slider__photo-track {
 
 .slider__photo-item img {
   max-width: 100%;
+  border-radius: 20px;
 }
 
 .slider__radio {
