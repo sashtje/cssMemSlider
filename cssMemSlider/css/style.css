@@ -26,7 +26,7 @@
 
 .slider {
   padding: 20px;
-  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  background-color: #fcf8dd;
 }
 
 .slider__container {
@@ -51,6 +51,91 @@
 }
 
 .slider__radio-label {
+  cursor: pointer;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  background: radial-gradient(#f5f805, #fc0208);
+  background-clip: padding-box;
+  margin-right: 20px;
+  animation-name: hover-gradient-back;
+  animation-duration: 0.5s;
+  transition: 0.5s;
+}
+
+input[id="slide1"]:checked ~ .slider__radio .slider__radio-label[for="slide1"],
+input[id="slide2"]:checked ~ .slider__radio .slider__radio-label[for="slide2"],
+input[id="slide3"]:checked ~ .slider__radio .slider__radio-label[for="slide3"],
+input[id="slide4"]:checked ~ .slider__radio .slider__radio-label[for="slide4"] {
+  border-color: rgb(197, 7, 245);
+  transition: 0.5s;
+}
+
+.slider__radio-label:hover {
+  animation-name: hover-gradient;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.slider__radio-label:active {
+  border-color: #ff0000;
+}
+
+input[id="slide1"]:checked
+  ~ .slider__radio
+  .slider__radio-label[for="slide1"]:active,
+input[id="slide2"]:checked
+  ~ .slider__radio
+  .slider__radio-label[for="slide2"]:active,
+input[id="slide3"]:checked
+  ~ .slider__radio
+  .slider__radio-label[for="slide3"]:active,
+input[id="slide4"]:checked
+  ~ .slider__radio
+  .slider__radio-label[for="slide4"]:active {
+  border-color: #ff0000;
+}
+
+@keyframes hover-gradient {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+    background: radial-gradient(#fc0208, #f5f805 80%);
+    background-clip: padding-box;
+  }
+  80% {
+    opacity: 1;
+    background: radial-gradient(#fc0208, #f5f805 80%);
+    background-clip: padding-box;
+  }
+  100% {
+    background: radial-gradient(#fc0208, #f5f805 80%);
+    background-clip: padding-box;
+  }
+}
+
+@keyframes hover-gradient-back {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+    background: radial-gradient(#f5f805, #fc0208);
+    background-clip: padding-box;
+  }
+  80% {
+    opacity: 1;
+    background: radial-gradient(#f5f805, #fc0208);
+    background-clip: padding-box;
+  }
+  100% {
+    background: radial-gradient(#f5f805, #fc0208);
+    background-clip: padding-box;
+  }
 }
 
 .slider__text-list {
